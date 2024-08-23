@@ -14,6 +14,6 @@ class RecipesController extends Controller
         $recipes = Recipe::all();
 
         // return the view
-        return view('recipes.index', compact('recipes'));
+        return view('welcome', compact('recipes'));
     }
 }
