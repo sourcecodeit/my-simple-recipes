@@ -12,6 +12,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use \NaturalGroove\Filament\ImageGeneratorField\Forms\Components\ImageGenerator;
+
 
 class RecipeResource extends Resource
 {
@@ -36,6 +38,7 @@ class RecipeResource extends Resource
                             ->unique()
                             ->label('Ingredient Name'),
                     ]),
+                ImageGenerator::make('photo_url'),
             ]);
     }
 
