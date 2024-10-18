@@ -19,8 +19,14 @@
             <div class="relative min-h-screen flex flex-col justify-start selection:bg-[#FF2D20] selection:text-white">
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full flex-wrap">
                 @foreach ($recipes as $recipe)
-                    <div class="bg-slate-800 rounded-lg border-2 border-slate-500 p-4 w-full">
-                        {{ $recipe->name }}
+                    <div class="bg-slate-800 rounded-lg w-full">
+                        <p class="font-bold text-slate-50 p-4">{{ $recipe->name }}</p>
+                        <div>
+                            @if($recipe->photo_url)
+                                <img src="/storage/{{ $recipe->photo_url }}" alt="{{ $recipe->name }}"
+                                    class="w-full rounded-lg object-cover rounded-t-none">
+                            @endif
+                        </div>
                     </div>
                 @endforeach
                 </div>
